@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: jenkins-jnlp
+  namespace: jenkin
+  annotations:
+      prometheus.io/scrape: 'true'
+      prometheus.io/path:   /
+      prometheus.io/port:   '50000'
+spec:
+  selector:
+    app: jenkins-server
+  type: ClusterIP
+  ports:
+    - port: 50000
+      targetPort: 50000

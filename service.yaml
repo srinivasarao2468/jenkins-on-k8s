@@ -2,8 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: jenkins-service
-  namespace: devops-tools
-  annotations:
+  namespace: jenkins  annotations:
       prometheus.io/scrape: 'true'
       prometheus.io/path:   /
       prometheus.io/port:   '8080'
